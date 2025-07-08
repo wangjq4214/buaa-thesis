@@ -1,3 +1,6 @@
+#import "@preview/subpar:0.2.2"
+#import "@preview/lovelace:0.3.0"
+
 #import "src/constant.typ": font-size, font-type
 #import "src/cover.typ": cover
 #import "src/abstract.typ": abstract, abstract-en
