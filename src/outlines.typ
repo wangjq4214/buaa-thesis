@@ -92,7 +92,7 @@
   ]
 
   show outline.entry.where(level: 1): it => {
-    set text(size: font-size.small-four, font: sun-font)
+    set text(size: font-size.small-four, font: font-type.sun)
     set block(spacing: 1.25em)
 
     link(it.element.location(), [
@@ -125,7 +125,7 @@
   ]
 
   show outline.entry.where(level: 1): it => {
-    set text(size: font-size.small-four, font: sun-font)
+    set text(size: font-size.small-four, font: font-type.sun)
     set block(spacing: 1.25em)
 
     link(it.element.location(), [

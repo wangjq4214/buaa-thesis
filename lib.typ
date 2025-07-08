@@ -34,7 +34,7 @@
   }
 
   context {
-    if query(figure.where(kind: image)).len() > 0 {
+    if query(figure.where(kind: table)).len() > 0 {
       table-outline()
       pagebreak()
     }
@@ -75,7 +75,7 @@
   }
 
   if cv != [] {
-    [= 个人简历]
+    [= 作者简介]
     cv
   }
 }
