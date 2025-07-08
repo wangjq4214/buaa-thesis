@@ -18,7 +18,7 @@
 
 ## 快速开始
 
-查看 [thesis.typ](./template/thesis.typ) 和 [thesis.pdf](./example/thesis.pdf)，可以查看具体的代码和生成的 PDF 文件。
+查看 [thesis.typ](https://github.com/wangjq4214/buaa-thesis/blob/main/template/thesis.typ) 和 [thesis.pdf](https://github.com/wangjq4214/buaa-thesis/blob/main/example/thesis.pdf)，可以查看具体的代码和生成的 PDF 文件。
 
 这个软件包只提供了一个主要的 API 用于编写你自己的毕业论文，极大的简化了写作过程：
 
