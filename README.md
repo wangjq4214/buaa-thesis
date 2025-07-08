@@ -14,9 +14,7 @@ A **[Typst](https://typst.app)** template for BUAA graduate thesis, capable of q
 - 🔑 100% compliant with BUAA's latest thesis format file, more accurate than Word
 - 🔩 Directly includes packages like [lovelace](https://typst.app/universe/package/lovelace), [subpar](https://typst.app/universe/package/subpar) for pseudocode and subfigure editing
 
-<div style="padding: 10px; background: #fff8e6; border-left: 5px solid #ffa500; margin: 10px 0;">
-  ⚠️ <span style="font-weight: bold;">Warning</span>: This is not an official template. Although it strictly follows relevant specifications, there is no Word version!! The foolish format checking system seems not to support PDF??
-</div>
+> ⚠️ **Warning**: This is not an official template. Although it strictly follows relevant specifications, there is no Word version!! The foolish format checking system seems not to support PDF??
 
 ## Quick Start
 

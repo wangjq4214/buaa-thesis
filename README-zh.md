@@ -14,9 +14,7 @@
 - 🔑 100% 遵循了北航最新的论文格式文件，比 Word 还原的更加准确
 - 🔩 直接包含了 [lovelace](https://typst.app/universe/package/lovelace)、[subpar](https://typst.app/universe/package/subpar) 等工具包，用于伪代码和编排子图编辑
 
-<div style="padding: 10px; background: #fff8e6; border-left: 5px solid #ffa500; margin: 10px 0;">
-  ⚠️ <span style="font-weight: bold;">警告</span>: 这并不官方的模板，虽然严格遵循了相关的规范，但没有 Word 版本！！愚蠢的格式检查系统貌似不支持 PDF？？
-</div>
+> ⚠️ **警告**: 这并不官方的模板，虽然严格遵循了相关的规范，但没有 Word 版本！！愚蠢的格式检查系统貌似不支持 PDF？？
 
 ## 快速开始
 
