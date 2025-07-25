@@ -4,7 +4,7 @@
 #import "utils.typ": heading-numbering
 
 #let show-heading(body) = {
-  set heading(numbering: heading-numbering)
+  set heading(numbering: heading-numbering, supplement: "节")
 
   show heading.where(level: 1): it => {
     set text(size: font-size.three, font: font-type.hei, weight: "regular", lang: "cn")
