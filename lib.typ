@@ -1,4 +1,3 @@
-#import "@preview/subpar:0.2.2"
 #import "@preview/lovelace:0.3.0"
 
 #import "src/constant.typ": font-size, font-type
@@ -8,7 +7,7 @@
 #import "src/header-footer.typ": append-header, leading-footer, main-footer, main-header
 #import "src/main-format.typ": show-main
 #import "src/bib.typ": bib
-#import "src/utils.typ": heading-numbering, reset-page
+#import "src/utils.typ": heading-numbering, reset-page, sub-fig
 
 #let abstract-render(abstract: [], abstract-en: []) = {
   if abstract != [] {

@@ -1,3 +1,6 @@
+#import "@preview/subpar:0.2.2"
+#import "constant.typ": font-size
+
 #let distr(s, w) = {
   box(width: w, stack(dir: ltr, ..s.clusters().map(x => [#x]).intersperse(1fr)))
 }
@@ -19,3 +22,10 @@
     return numbering("1.1.1", ..num) + "  "
   }
 }
+
+#let sub-fig = subpar.grid.with(supplement: "图", show-sub-caption: (num, it) => {
+  set text(size: font-size.five)
+  set par(leading: 0.8em)
+
+  it
+})
