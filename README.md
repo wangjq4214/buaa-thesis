@@ -48,6 +48,37 @@ This package only provides one main API for writing your own graduate thesis, gr
 - [ ] Implement support for non-engineering thesis
 - [ ] Implement support for proposal reports and interim reports (maybe a new package?)
 
+## Changelog
+
+### [0.1.1](https://github.com/wangjq4214/buaa-thesis/tree/0.1.1) (2025-09-28)
+
+#### ✨ Features
+
+- add support fo sub figure
+
+### 🐛 Bug Fixes
+
+- fix the heading reference error format
+- fix the error bib font type
+
+### [0.1.0](https://github.com/wangjq4214/buaa-thesis/tree/0.1.0) (2025-07-08)
+
+#### 🎉 First Version
+
+- release the first version of modern buaa thesis template
+
+#### ✨ Features
+
+- add support for cover pages
+- add support for table of contents
+- add support for tables of figures and tables
+- add support for section headings
+- add support for figures and tables
+- add support for equation numbering
+- add support for body formatting
+- add support for reference documents
+- add support for appendices such as personal information pages
+
 ## License
 
 [MIT](./LICENSE).
