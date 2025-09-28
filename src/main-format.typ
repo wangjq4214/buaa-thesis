@@ -92,6 +92,19 @@
   body
 }
 
+#let show-ref(body) = {
+  show ref: it => {
+    let el = it.element
+    if el != none and el.func() == heading {
+      link(el.location(), [#el.supplement #numbering(el.numbering, ..counter(heading).at(el.location())).trim()])
+    } else {
+      it
+    }
+  }
+
+  body
+}
+
 #let show-main(body) = {
   show: show-cn-fakebold
 
@@ -99,6 +112,7 @@
   show: show-figure
 
   show: show-equation
+  show: show-ref
 
   set par(first-line-indent: (amount: 2em, all: true))
 
