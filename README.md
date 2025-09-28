@@ -56,7 +56,7 @@ This package only provides one main API for writing your own graduate thesis, gr
 
 - add support fo sub figure
 
-### 🐛 Bug Fixes
+#### 🐛 Bug Fixes
 
 - fix the heading reference error format
 - fix the error bib font type
