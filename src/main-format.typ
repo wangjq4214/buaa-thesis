@@ -43,9 +43,24 @@
 
 #let show-figure(body) = {
   set figure.caption(separator: "  ")
-  show figure.where(kind: image): set figure(supplement: "图")
 
-  show figure.where(kind: table): set figure(supplement: "表")
+  show figure.where(kind: image): set figure(supplement: "图", numbering: it => {
+    let numbers = counter(heading).at(here()).slice(0, 1)
+    numbering("1.1", ..numbers, it)
+  })
+
+  show figure.where(kind: table): set figure(supplement: "表", numbering: it => {
+    let numbers = counter(heading).at(here()).slice(0, 1)
+    numbering("1.1", ..numbers, it)
+  })
+
+  show heading.where(level: 1): it => {
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+
+    it
+  }
+
   show figure.where(kind: table): set figure.caption(position: top)
 
   show figure.caption: it => {

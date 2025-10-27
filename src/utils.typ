@@ -23,9 +23,16 @@
   }
 }
 
-#let sub-fig = subpar.grid.with(supplement: "图", show-sub-caption: (num, it) => {
-  set text(size: font-size.five)
-  set par(leading: 0.8em)
+#let sub-fig = subpar.grid.with(
+  supplement: "图",
+  numbering: it => {
+    let numbers = counter(heading).at(here()).slice(0, 1)
+    numbering("1.1", ..numbers, it)
+  },
+  show-sub-caption: (num, it) => {
+    set text(size: font-size.five)
+    set par(leading: 0.8em)
 
-  it
-})
+    it
+  },
+)
