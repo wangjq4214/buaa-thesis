@@ -29,6 +29,10 @@
     let numbers = counter(heading).at(here()).slice(0, 1)
     numbering("1.1", ..numbers, it)
   },
+  numbering-sub-ref: (..nums) => {
+    let numbers = counter(heading).at(here()).slice(0, 1)
+    numbering("1.1a", ..numbers, ..nums)
+  },
   show-sub-caption: (num, it) => {
     set text(size: font-size.five)
     set par(leading: 0.8em)
