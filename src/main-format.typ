@@ -84,6 +84,7 @@
 
   show table.cell: it => {
     set text(size: font-size.five, font: font-type.sun, lang: "cn")
+    set par(leading: 1em, spacing: 0.5em)
 
     v(1pt)
     it
