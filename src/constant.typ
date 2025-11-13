@@ -14,21 +14,21 @@
 #let font-type = (
   sun: (
     (name: "Times New Roman", covers: "latin-in-cjk"),
-    "Source Han Serif SC",
-    "Source Han Serif",
-    "Noto Serif CJK SC",
     "SimSun",
     "Songti SC",
     "STSongti",
+    "Source Han Serif SC",
+    "Source Han Serif",
+    "Noto Serif CJK SC",
   ),
   hei: (
     (name: "Times New Roman", covers: "latin-in-cjk"),
-    "Source Han Sans SC",
-    "Source Han Sans",
-    "Noto Sans CJK SC",
     "SimHei",
     "Heiti SC",
     "STHeiti",
+    "Source Han Sans SC",
+    "Source Han Sans",
+    "Noto Sans CJK SC",
   ),
 )
 
