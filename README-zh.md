@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <a href="https://www.buaa.edu.cn" rel="noopener noreferrer">
     <img width="180" src="assets/logo.png" alt="buaa logo" />
   </a>
@@ -23,7 +23,7 @@
 这个软件包只提供了一个主要的 API 用于编写你自己的毕业论文，极大的简化了写作过程：
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.1.0": thesis
+#import "@preview/modern-buaa-thesis:0.1.1": thesis
 
 #show thesis.with()
 
