@@ -1,6 +1,6 @@
 [package]
 name = "modern-buaa-thesis"
-version = "0.1.1"
+version = "0.1.2"
 entrypoint = "lib.typ"
 license = "MIT"
 authors = ["wangjq4214"]

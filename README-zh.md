@@ -23,7 +23,7 @@
 这个软件包只提供了一个主要的 API 用于编写你自己的毕业论文，极大的简化了写作过程：
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.1.1": thesis
+#import "@preview/modern-buaa-thesis:0.1.2": thesis
 
 #show thesis.with()
 
@@ -49,6 +49,20 @@
 - [ ] 实现开题报告、中期报告的支持（或许是新的包？）
 
 ## 更新日志
+
+### [0.1.2](https://github.com/wangjq4214/buaa-thesis/tree/0.1.2) (2025-12-05)
+
+#### ✨ 新特性
+
+- 支持北航研究生毕业论文的最新格式要求（2025.09版本）
+
+#### 🐛 错误修复
+
+- 修复了字体类型的错误顺序
+
+#### 🛠️ 改进
+
+- 添加了自动更新软件包版本号的脚本
 
 ### [0.1.1](https://github.com/wangjq4214/buaa-thesis/tree/0.1.1) (2025-09-28)
 

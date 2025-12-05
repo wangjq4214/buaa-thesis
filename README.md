@@ -23,7 +23,7 @@ Check out [thesis.typ](https://github.com/wangjq4214/buaa-thesis/blob/main/templ
 This package only provides one main API for writing your own graduate thesis, greatly simplifying the writing process:
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.1.1": thesis
+#import "@preview/modern-buaa-thesis:0.1.2": thesis
 
 #show thesis.with()
 
@@ -49,6 +49,20 @@ This package only provides one main API for writing your own graduate thesis, gr
 - [ ] Implement support for proposal reports and interim reports (maybe a new package?)
 
 ## Changelog
+
+### [0.1.2](https://github.com/wangjq4214/buaa-thesis/tree/0.1.2) (2025-12-05)
+
+#### ✨ Features
+
+- support the latest format requirements of BUAA graduate thesis (2025.09 edition)
+
+#### 🐛 Bug Fixes
+
+- fix the error order of font types
+
+#### 🛠️ Improvements
+
+- add a script to automatically update the version number of the package
 
 ### [0.1.1](https://github.com/wangjq4214/buaa-thesis/tree/0.1.1) (2025-09-28)
 
