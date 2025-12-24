@@ -54,9 +54,15 @@
     numbering("1.1", ..numbers, it)
   })
 
+  show figure.where(kind: "algorithm"): set figure(supplement: "算法", numbering: it => {
+    let numbers = counter(heading).at(here()).slice(0, 1)
+    numbering("1.1", ..numbers, it)
+  })
+
   show heading.where(level: 1): it => {
     counter(figure.where(kind: image)).update(0)
     counter(figure.where(kind: table)).update(0)
+    counter(figure.where(kind: "algorithm")).update(0)
 
     it
   }
