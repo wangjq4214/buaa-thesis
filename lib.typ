@@ -1,5 +1,3 @@
-#import "@preview/lovelace:0.3.0"
-
 #import "src/constant.typ": font-size, font-type
 #import "src/cover.typ": cover
 #import "src/abstract.typ": abstract, abstract-en
@@ -8,6 +6,7 @@
 #import "src/main-format.typ": show-main
 #import "src/bib.typ": bib
 #import "src/utils.typ": heading-numbering, reset-page, sub-fig
+#import "src/algorithm.typ": *
 
 #let abstract-render(abstract: [], abstract-en: []) = {
   if abstract != [] {
