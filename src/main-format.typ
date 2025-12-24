@@ -102,7 +102,7 @@
 
   set math.equation(supplement: "公式", numbering: n => {
     let numbers = counter(heading).at(here()).slice(0, 1)
-    numbering("(1.1)", ..numbers, n)
+    text(font: font-type.sun, numbering("(1.1)", ..numbers, n))
   })
 
   body
