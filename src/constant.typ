@@ -30,6 +30,15 @@
     "Source Han Sans",
     "Noto Sans CJK SC",
   ),
+  kai: (
+    (name: "Times New Roman", covers: "latin-in-cjk"),
+    "SimKai",
+    "Kaiti SC",
+    "STKaiti",
+    "Source Han Serif SC",
+    "Source Han Serif",
+    "Noto Serif CJK SC",
+  ),
 )
 
 #let no-numbering-section = (
