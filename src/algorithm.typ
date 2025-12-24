@@ -107,7 +107,7 @@
 }
 
 #let pseudocode(
-  line-numbering: "1",
+  line-numbering: "1:",
   line-number-supplement: "Line",
   stroke: 1pt + gray,
   indentation: 1em,
