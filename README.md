@@ -44,7 +44,7 @@ This package only provides one main API for writing your own graduate thesis, gr
 
 ## Roadmap
 
-- [x] Implement support for master's thesis (experimental support, there may still be some minor issues, welcome to feedback via issues)
+- [x] Implement support for master's thesis (experimental support, there may still be some minor issues, welcome to feedback via issues, Thanks [Aerithy](https://github.com/Aerithy))
 - [ ] Implement support for non-engineering thesis
 - [ ] Implement support for proposal reports and interim reports (maybe a new package?)
 
@@ -62,6 +62,7 @@ This package only provides one main API for writing your own graduate thesis, gr
 
 - fix equation numbering font to New Times Roman
 - fix algorithm block numbering issue
+- fix the behavior where the conclusion section heading was incorrectly numbered
 
 ### [0.1.2](https://github.com/wangjq4214/buaa-thesis/tree/0.1.2) (2025-12-05)
 
