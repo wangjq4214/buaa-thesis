@@ -44,11 +44,24 @@
 
 ## 路线图
 
-- [ ] 实现硕士毕业论文的支持
+- [x] 实现硕士毕业论文的支持 (实验性支持，或许仍然存在一些小问题，欢迎 issue 反馈)
 - [ ] 实现非工科毕业论文的支持
 - [ ] 实现开题报告、中期报告的支持（或许是新的包？）
 
 ## 更新日志
+
+### [0.2.0 (💥 BreakChange)](https://github.com/wangjq4214/buaa-thesis/tree/0.2.0) (2025-12-29)
+
+#### ✨ 新特性
+
+- 添加了对工学硕士论文的支持，包括学术硕士和专业硕士
+- 添加了自定义的算法块，感谢 [lovelace](https://typst.app/universe/package/lovelace) 提供的灵感
+- 添加楷书的支持
+
+#### 🐛 错误修复
+
+- 修复公式标号字体为 New Times Roman
+- 修复算法块的编号问题
 
 ### [0.1.2](https://github.com/wangjq4214/buaa-thesis/tree/0.1.2) (2025-12-05)
 
