@@ -1,7 +1,26 @@
 #import "@preview/cuti:0.3.0": show-cn-fakebold
+#import "@preview/subpar:0.2.2"
 
-#import "constant.typ": font-size, font-type, no-numbering-section
+#import "constant.typ": font-size, font-type
 #import "utils.typ": heading-numbering
+
+#let sub-fig = subpar.grid.with(
+  supplement: "图",
+  numbering: it => {
+    let numbers = counter(heading).at(here()).slice(0, 1)
+    numbering("1.1", ..numbers, it)
+  },
+  numbering-sub-ref: (..nums) => {
+    let numbers = counter(heading).at(here()).slice(0, 1)
+    numbering("1.1a", ..numbers, ..nums)
+  },
+  show-sub-caption: (num, it) => {
+    set text(size: font-size.five)
+    set par(leading: 0.8em)
+
+    it
+  },
+)
 
 #let show-heading(body) = {
   set heading(numbering: heading-numbering, supplement: "节")
@@ -11,13 +30,9 @@
     set align(center)
     set par(leading: 1em, spacing: 1em)
 
-    if no-numbering-section.contains(it.body) {
-      it.body
-    } else {
-      v(0.5em)
-      it
-      v(0.5em)
-    }
+    v(0.5em)
+    it
+    v(0.5em)
   }
 
   show heading.where(level: 2): it => {

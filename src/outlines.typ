@@ -1,7 +1,7 @@
 #import "@preview/cuti:0.3.0": show-cn-fakebold
 
-#import "constant.typ": font-size, font-type, no-numbering-section
-#import "utils.typ": distr
+#import "constant.typ": font-size, font-type
+#import "utils.typ": distr, show-heading-number
 
 #let heading-outline() = {
   show: show-cn-fakebold
@@ -26,15 +26,26 @@
 
     v(0.5em)
 
-    if no-numbering-section.contains(it.body()) {
+    context {
+      let has-number = show-heading-number.at(it.element.location())
+
       link(it.element.location(), [
         #it.indented(
-          [],
+          if has-number { it.prefix() } else { [] },
           [#it.body() #box(width: 1fr, repeat([.], gap: 0.1em)) #text(size: font-size.small-four, [#it.page()])],
-          gap: 0em,
+          gap: if has-number { 0.2em } else { 0em },
         )
       ])
-    } else {
+    }
+  }
+
+  show outline.entry.where(level: 2): it => {
+    set text(size: font-size.small-four, font: font-type.sun)
+    set block(spacing: 1.25em)
+
+    context {
+      let has-number = show-heading-number.at(it.element.location())
+
       link(it.element.location(), [
         #it.indented(
           it.prefix(),
@@ -45,30 +56,21 @@
     }
   }
 
-  show outline.entry.where(level: 2): it => {
-    set text(size: font-size.small-four, font: font-type.sun)
-    set block(spacing: 1.25em)
-
-    link(it.element.location(), [
-      #it.indented(
-        it.prefix(),
-        [#it.body() #box(width: 1fr, repeat([.], gap: 0.1em)) #text(size: font-size.small-four, [#it.page()])],
-        gap: 0.2em,
-      )
-    ])
-  }
-
   show outline.entry.where(level: 3): it => {
     set text(size: font-size.five, font: font-type.sun)
     set block(spacing: 1.25em)
 
-    link(it.element.location(), [
-      #it.indented(
-        it.prefix(),
-        [#it.body() #box(width: 1fr, repeat([.], gap: 0.1em)) #text(size: font-size.small-four, [#it.page()])],
-        gap: 0.2em,
-      )
-    ])
+    context {
+      let has-number = show-heading-number.at(it.element.location())
+
+      link(it.element.location(), [
+        #it.indented(
+          it.prefix(),
+          [#it.body() #box(width: 1fr, repeat([.], gap: 0.1em)) #text(size: font-size.small-four, [#it.page()])],
+          gap: 0.2em,
+        )
+      ])
+    }
   }
 
   outline(title: none, depth: 3, indent: 1em)

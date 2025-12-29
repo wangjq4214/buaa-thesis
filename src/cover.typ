@@ -1,7 +1,7 @@
 #import "@preview/cuti:0.3.0": show-cn-fakebold
 
 #import "./constant.typ": font-size, font-type
-#import "./utils.typ": distr
+#import "./utils.typ": degree-text, distr
 
 #let page-break-with-print(is-print: false) = {
   if is-print {
@@ -32,7 +32,8 @@
   v(2.5pt)
 }
 
-#let chinese-cover-type() = {
+#let chinese-cover-type(type: "master") = {
+  let dt = degree-text(type)
   set align(alignment.center)
 
   set par(spacing: 1em, leading: 1em)
@@ -42,7 +43,7 @@
   v(0.5cm)
 
   // set type title
-  block(text(size: 48pt, font: "STXingkai", [博士学位论文]))
+  block(text(size: 48pt, font: "STXingkai", dt.zh-thesis))
 }
 
 #let chinese-cover-title(title: "") = {
@@ -86,13 +87,14 @@
 }
 
 #let chinese-cover(
-  title: "",
-  author: "",
-  major: "",
-  teacher: "",
-  college: "",
-  lib-number: "",
-  stu-id: "",
+  type: "master",
+  title: [],
+  author: [],
+  major: [],
+  teacher: [],
+  college: [],
+  lib-number: [],
+  stu-id: [],
 ) = {
   // set library number and thesis number
   chinese-cover-leading(lib-number: lib-number, stu-id: stu-id)
@@ -104,7 +106,7 @@
     v(3.5cm - height)
   }
 
-  chinese-cover-type()
+  chinese-cover-type(type: type)
 
   chinese-cover-title(title: title)
 
@@ -116,7 +118,7 @@
   )
 }
 
-#let english-cover-title(title: "", degree: "") = {
+#let english-cover-title(title: [], degree: []) = {
   // set english title
   block(text(size: font-size.small-two, font: font-type.hei, weight: "bold", lang: "en", title))
 
@@ -131,7 +133,7 @@
   v(114pt)
 }
 
-#let english-cover-info(author: "", teacher: "") = {
+#let english-cover-info(author: [], teacher: []) = {
   set text(size: font-size.small-three, font: font-type.hei, weight: "bold", lang: "en")
   set par(spacing: 1em, leading: 1em, first-line-indent: (amount: 4cm, all: true))
   set align(alignment.left)
@@ -147,7 +149,7 @@
   v(180pt)
 }
 
-#let english-cover-college(college: "") = {
+#let english-cover-college(college: []) = {
   set text(size: font-size.small-three, font: font-type.hei, lang: "en")
   set par(spacing: 1em, leading: 1em)
 
@@ -159,7 +161,7 @@
   ]
 }
 
-#let english-cover(title: "", degree: "", author: "", teacher: "", college: "") = {
+#let english-cover(title: [], degree: [], author: [], teacher: [], college: []) = {
   set page(margin: (top: 6cm, x: 2.5cm, bottom: 3cm))
   set align(alignment.center)
 
@@ -172,13 +174,14 @@
   english-cover-college(college: college)
 }
 
-#let title-cover-title(title: "") = {
+#let title-cover-title(type: "master", title: []) = {
+  let dt = degree-text(type)
   set align(alignment.center)
   set par(spacing: 1.25em, leading: 1.25em)
 
   show: show-cn-fakebold
 
-  block(text(size: font-size.small-two, font: font-type.hei, distr("博士学位论文", 11em), lang: "cn"))
+  block(text(size: font-size.small-two, font: font-type.hei, distr(dt.zh-thesis, 11em), lang: "cn"))
 
   v(80pt)
 
@@ -187,21 +190,21 @@
 }
 
 #let title-cover-info(
-  author: "",
-  degree: "",
-  teacher: "",
-  teacher-degree: "",
+  author: [],
+  degree: [],
+  teacher: [],
+  teacher-degree: [],
   major: (
-    discipline: "",
-    direction: "",
-    discipline-first: "",
-    discipline-direction: "",
+    discipline: [],
+    direction: [],
+    discipline-first: [],
+    discipline-direction: [],
   ),
   date: (
-    start: "",
-    end: "",
-    summit: "",
-    defense: "",
+    start: [],
+    end: [],
+    summit: [],
+    defense: [],
   ),
 ) = {
   set text(size: font-size.small-four, font: font-type.sun, lang: "cn")
@@ -221,32 +224,33 @@
 }
 
 #let title-cover(
-  title: "",
-  author: "",
-  degree: "",
-  teacher: "",
-  teacher-degree: "",
+  type: "master",
+  title: [],
+  author: [],
+  degree: [],
+  teacher: [],
+  teacher-degree: [],
   major: (
-    discipline: "",
-    direction: "",
-    discipline-first: "",
-    discipline-direction: "",
+    discipline: [],
+    direction: [],
+    discipline-first: [],
+    discipline-direction: [],
   ),
   date: (
-    start: "",
-    end: "",
-    summit: "",
-    defense: "",
+    start: [],
+    end: [],
+    summit: [],
+    defense: [],
   ),
-  lib-number: "",
-  stu-id: "",
+  lib-number: [],
+  stu-id: [],
 ) = {
   // set library number and thesis number
   chinese-cover-leading(lib-number: lib-number, stu-id: stu-id)
 
   v(100pt)
 
-  title-cover-title(title: title)
+  title-cover-title(title: title, type: type)
 
   v(150pt)
 
@@ -326,29 +330,31 @@
 }
 
 #let cover(
-  title: (zh: "", en: ""),
-  author: (zh: "", en: ""),
-  teacher: (zh: "", en: ""),
-  teacher-degree: (zh: "", en: ""),
-  college: (zh: "", en: ""),
+  type: "master",
+  title: (zh: [], en: []),
+  author: (zh: [], en: []),
+  teacher: (zh: [], en: []),
+  teacher-degree: (zh: [], en: []),
+  college: (zh: [], en: []),
   major: (
-    discipline: "",
-    direction: "",
-    discipline-first: "",
-    discipline-direction: "",
+    discipline: [],
+    direction: [],
+    discipline-first: [],
+    discipline-direction: [],
   ),
   date: (
-    start: "",
-    end: "",
-    summit: "",
-    defense: "",
+    start: [],
+    end: [],
+    summit: [],
+    defense: [],
   ),
-  degree: (zh: "工学博士", en: "Doctor of Philosophy"),
-  lib-number: "",
-  stu-id: "",
+  degree: (zh: [], en: []),
+  lib-number: [],
+  stu-id: [],
   is-print: false,
 ) = {
   chinese-cover(
+    type: type,
     title: title.zh,
     author: author.zh,
     major: major.discipline,
@@ -371,6 +377,7 @@
   page-break-with-print(is-print: is-print)
 
   title-cover(
+    type: type,
     author: author.zh,
     title: title.zh,
     degree: degree.zh,

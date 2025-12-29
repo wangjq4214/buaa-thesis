@@ -1,5 +1,5 @@
 #import "constant.typ": font-size, font-type
-#import "utils.typ": heading-numbering
+#import "utils.typ": degree-text, heading-numbering
 
 #let leading-footer() = {
   set align(center)
@@ -49,14 +49,15 @@
   ]
 }
 
-#let main-header() = context {
+#let main-header(type: "master") = context {
+  let dt = degree-text(type)
   let page-number = here().page()
 
   if calc.odd(page-number) {
     return [
       #show: show-header
 
-      北京航空航天大学博士学位论文
+      北京航空航天大学#dt.zh-thesis
       #line(length: 100%, stroke: 0.5pt)
     ]
   }

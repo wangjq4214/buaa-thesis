@@ -1,5 +1,32 @@
-#import "@preview/subpar:0.2.2"
-#import "constant.typ": font-size
+#let degree-text(degree-type) = {
+  if degree-type == "master" {
+    return (
+      zh: "硕士",
+      zh-student: "硕士研究生",
+      zh-thesis: "硕士学位论文",
+      zh-achievement: "攻读硕士学位期间取得的成果",
+      en: "Master",
+    )
+  }
+
+  if degree-type == "pro-master" {
+    return (
+      zh: "专业硕士",
+      zh-student: "专业硕士研究生",
+      zh-thesis: "专业硕士学位论文",
+      zh-achievement: "攻读硕士学位期间取得的成果",
+      en: "Professional Master",
+    )
+  }
+
+  return (
+    zh: "博士",
+    zh-student: "博士研究生",
+    zh-thesis: "博士学位论文",
+    zh-achievement: "攻读博士学位期间取得的成果",
+    en: "Doctor",
+  )
+}
 
 #let distr(s, w) = {
   box(width: w, stack(dir: ltr, ..s.clusters().map(x => [#x]).intersperse(1fr)))
@@ -9,7 +36,17 @@
   counter(page).update(1)
 }
 
-#let heading-numbering(..num) = {
+#let show-heading-number = state("show-heading-number", true)
+
+#let disable-heading-number() = {
+  show-heading-number.update(false)
+}
+
+#let heading-numbering(..num) = context {
+  if not show-heading-number.get() {
+    return ""
+  }
+
   if num.pos().len() == 1 {
     return "第" + numbering("一", ..num) + "章  "
   }
@@ -23,20 +60,4 @@
   }
 }
 
-#let sub-fig = subpar.grid.with(
-  supplement: "图",
-  numbering: it => {
-    let numbers = counter(heading).at(here()).slice(0, 1)
-    numbering("1.1", ..numbers, it)
-  },
-  numbering-sub-ref: (..nums) => {
-    let numbers = counter(heading).at(here()).slice(0, 1)
-    numbering("1.1a", ..numbers, ..nums)
-  },
-  show-sub-caption: (num, it) => {
-    set text(size: font-size.five)
-    set par(leading: 0.8em)
 
-    it
-  },
-)

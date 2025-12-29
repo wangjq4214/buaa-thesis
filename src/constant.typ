@@ -41,9 +41,8 @@
   ),
 )
 
-#let no-numbering-section = (
-  [参考文献],
-  [攻读博士学位期间取得的成果],
-  [致谢],
-  [作者简介],
+#let thesis-type = (
+  master: "master",
+  pro-master: "pro-master",
+  doctor: "doctor",
 )
