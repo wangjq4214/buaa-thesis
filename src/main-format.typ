@@ -150,6 +150,11 @@
     text(font: font-type.sun, numbering("(1.1)", ..numbers, n))
   })
 
+  show math.equation: it => {
+    set text(font: "Cambria Math")
+    it
+  }
+
   body
 }
 
