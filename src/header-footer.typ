@@ -3,7 +3,7 @@
 
 #let leading-footer() = {
   set align(center)
-  set text(size: font-size.five, font: font-type.sun, lang: "cn")
+  set text(size: font-size.five, font: font-type.sun, lang: "zh")
   set par(leading: 1em, spacing: 1em)
 
   context [
@@ -12,7 +12,7 @@
 }
 
 #let show-header(it) = {
-  set text(size: font-size.five, font: font-type.sun, lang: "cn")
+  set text(size: font-size.five, font: font-type.sun, lang: "zh")
   set align(center)
   set par(leading: 1em, spacing: 1em)
 
@@ -73,7 +73,7 @@
 
 #let main-footer() = {
   set align(center)
-  set text(size: font-size.five, font: font-type.sun, lang: "cn")
+  set text(size: font-size.five, font: font-type.sun, lang: "zh")
   set par(leading: 1em, spacing: 1em)
 
   context [

@@ -26,7 +26,7 @@
   set heading(numbering: heading-numbering, supplement: "节")
 
   show heading.where(level: 1): it => {
-    set text(size: font-size.three, font: font-type.hei, weight: "regular", lang: "cn")
+    set text(size: font-size.three, font: font-type.hei, weight: "regular", lang: "zh")
     set align(center)
     set par(leading: 1em, spacing: 1em)
 
@@ -44,7 +44,7 @@
   }
 
   show heading.where(level: 2): it => {
-    set text(size: font-size.four, font: font-type.hei, weight: "regular", lang: "cn")
+    set text(size: font-size.four, font: font-type.hei, weight: "regular", lang: "zh")
     set par(leading: 1em, spacing: 1em, first-line-indent: 0em)
 
     context {
@@ -61,7 +61,7 @@
   }
 
   show heading.where(level: 3): it => {
-    set text(size: font-size.small-four, font: font-type.hei, weight: "regular", lang: "cn")
+    set text(size: font-size.small-four, font: font-type.hei, weight: "regular", lang: "zh")
     set par(leading: 1em, spacing: 1em, first-line-indent: 0em)
 
     context {
@@ -111,7 +111,7 @@
   show figure.caption: it => {
     show: show-cn-fakebold
 
-    set text(size: font-size.five, font: font-type.sun, weight: "bold", lang: "cn")
+    set text(size: font-size.five, font: font-type.sun, weight: "bold", lang: "zh")
     set par(leading: 1em, spacing: 1em)
 
     if it.supplement == [图] {
@@ -128,7 +128,7 @@
   }
 
   show table.cell: it => {
-    set text(size: font-size.five, font: font-type.sun, lang: "cn")
+    set text(size: font-size.five, font: font-type.sun, lang: "zh")
     set par(leading: 1em, spacing: 0.5em)
 
     v(1pt)

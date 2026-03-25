@@ -118,7 +118,7 @@
   }
 
 
-  set text(size: font-size.small-four, font: font-type.sun, lang: "cn")
+  set text(size: font-size.small-four, font: font-type.sun, lang: "zh")
   set par(leading: 1.25em, spacing: 1.25em, justify: true)
 
   cover(

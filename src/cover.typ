@@ -13,7 +13,7 @@
 }
 
 #let chinese-cover-leading(lib-number: "", stu-id: "") = {
-  set text(size: font-size.five, font: font-type.hei, lang: "cn")
+  set text(size: font-size.five, font: font-type.hei, lang: "zh")
   set par(spacing: 1em, leading: 1.5em)
   show: show-cn-fakebold
 
@@ -53,12 +53,12 @@
 
   // set title
   v(96pt)
-  block(text(size: 32pt, font: font-type.sun, weight: "bold", title, lang: "cn"))
+  block(text(size: 32pt, font: font-type.sun, weight: "bold", title, lang: "zh"))
   v(96pt)
 }
 
 #let chinese-cover-info(author: "", major: "", teacher: "", college: "") = {
-  set text(size: font-size.four, font: font-type.hei, lang: "cn")
+  set text(size: font-size.four, font: font-type.hei, lang: "zh")
   set par(spacing: 1.25em, leading: 1.25em, first-line-indent: (amount: 8em, all: true))
 
   show par: it => {
@@ -181,12 +181,12 @@
 
   show: show-cn-fakebold
 
-  block(text(size: font-size.small-two, font: font-type.hei, distr(dt.zh-thesis, 11em), lang: "cn"))
+  block(text(size: font-size.small-two, font: font-type.hei, distr(dt.zh-thesis, 11em), lang: "zh"))
 
   v(80pt)
 
   set par(spacing: 1em, leading: 1em)
-  block(text(size: font-size.small-one, font: font-type.hei, weight: "bold", title, lang: "cn"))
+  block(text(size: font-size.small-one, font: font-type.hei, weight: "bold", title, lang: "zh"))
 }
 
 #let title-cover-info(
@@ -207,7 +207,7 @@
     defense: [],
   ),
 ) = {
-  set text(size: font-size.small-four, font: font-type.sun, lang: "cn")
+  set text(size: font-size.small-four, font: font-type.sun, lang: "zh")
   set par(justify: true)
 
   grid(
@@ -265,7 +265,7 @@
 }
 
 #let statement-cover() = {
-  set text(size: font-size.small-four, font: font-type.sun, lang: "cn")
+  set text(size: font-size.small-four, font: font-type.sun, lang: "zh")
   set par(spacing: 1.25em, leading: 1.25em, first-line-indent: (amount: 2em, all: true), justify: true)
 
   show par: it => {
@@ -275,7 +275,7 @@
   }
 
   [
-    #set text(size: font-size.three, font: font-type.hei, lang: "cn")
+    #set text(size: font-size.three, font: font-type.hei, lang: "zh")
     #set par(spacing: 1em, leading: 1em)
     #set align(alignment.center)
 
@@ -303,7 +303,7 @@
   v(100pt)
 
   [
-    #set text(size: font-size.three, font: font-type.hei, lang: "cn")
+    #set text(size: font-size.three, font: font-type.hei, lang: "zh")
     #set par(spacing: 1em, leading: 1em)
     #set align(alignment.center)
 

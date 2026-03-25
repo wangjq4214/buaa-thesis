@@ -8,7 +8,7 @@
 
   [
     #set align(center)
-    #set text(size: font-size.three, font: font-type.hei, lang: "cn")
+    #set text(size: font-size.three, font: font-type.hei, lang: "zh")
 
     #v(0.5em)
     *#distr("摘要", 3em)*
@@ -17,7 +17,7 @@
 
   [
     #set align(center)
-    #set text(size: font-size.five, font: font-type.hei, lang: "cn")
+    #set text(size: font-size.five, font: font-type.hei, lang: "zh")
 
     #v(2.5pt)
     \
@@ -33,7 +33,7 @@
   body
 
   [
-    #set text(size: font-size.small-four, font: font-type.hei, lang: "cn")
+    #set text(size: font-size.small-four, font: font-type.hei, lang: "zh")
 
     *关键词*：#keyword.join("，")
   ]
@@ -42,7 +42,7 @@
 #let abstract-en(keyword: (), body) = {
   [
     #set align(center)
-    #set text(size: font-size.three, font: font-type.hei, lang: "cn")
+    #set text(size: font-size.three, font: font-type.hei, lang: "zh")
     #set par(leading: 1em, spacing: 1em)
 
     #v(0.5em)
@@ -52,7 +52,7 @@
 
   [
     #set align(center)
-    #set text(size: font-size.five, font: font-type.hei, lang: "cn")
+    #set text(size: font-size.five, font: font-type.hei, lang: "zh")
 
     #v(2.5pt)
     \
@@ -72,7 +72,7 @@
   body
 
   [
-    #set text(size: font-size.small-four, font: font-type.hei, lang: "cn")
+    #set text(size: font-size.small-four, font: font-type.hei, lang: "zh")
 
     *Keywords*: #keyword.join(", ")
   ]
