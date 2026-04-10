@@ -1,10 +1,11 @@
+#import "@preview/gb7714-bilingual:0.2.3": gb7714-bibliography, init-gb7714, multicite
 #import "src/constant.typ": font-size, font-type, thesis-type
 #import "src/cover.typ": cover
 #import "src/abstract.typ": abstract, abstract-en
 #import "src/outlines.typ": heading-outline, image-outline, table-outline
 #import "src/header-footer.typ": append-header, leading-footer, main-footer, main-header
 #import "src/main-format.typ": show-main, sub-fig
-#import "src/bib.typ": bib
+// #import "src/bib.typ": bib
 #import "src/utils.typ": degree-text, disable-heading-number, heading-numbering, reset-page
 #import "src/algorithm.typ": *
 
@@ -50,7 +51,11 @@
 
   if bibliography != none {
     [= 参考文献]
-    bib(bibliography: bibliography)
+    set text(size: font-size.five, font: font-type.sun)
+    set par(leading: 1em, spacing: 1em, justification-limits: (
+      tracking: (min: -0.01em, max: 0.02em),
+    ))
+    gb7714-bibliography(title: none)
 
     if achievement != [] or acknowledgements != [] or cv != [] {
       pagebreak()
@@ -117,7 +122,6 @@
     panic("Invalid thesis type: " + type)
   }
 
-
   set text(size: font-size.small-four, font: font-type.sun, lang: "zh")
   set par(leading: 1.25em, spacing: 1.25em, justify: true)
 
@@ -150,6 +154,8 @@
 
   [
     #show: show-main
+
+    #show: init-gb7714.with(bibliography, style: "numeric", version: "2015")
 
     #body
 
