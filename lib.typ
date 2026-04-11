@@ -155,9 +155,12 @@
   [
     #show: show-main
 
-    #show: init-gb7714.with(bibliography, style: "numeric", version: "2015")
-
-    #body
+    #if bibliography != none {
+      show: init-gb7714.with(bibliography, style: "numeric", version: "2015")
+      body
+    } else {
+      body
+    }
 
     #disable-heading-number()
 
