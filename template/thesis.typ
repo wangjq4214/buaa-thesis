@@ -1,4 +1,4 @@
-﻿#import "@preview/modern-buaa-thesis:0.2.0": abstract, abstract-en, font-type, pseudocode-list, thesis
+﻿#import "@preview/modern-buaa-thesis:0.3.0": abstract, abstract-en, font-type, multicite, pseudocode-list, thesis
 
 #let abstract-zh-text = [
   #show: abstract.with(keyword: ("关键词 1", "关键词 2"))
@@ -36,7 +36,7 @@
   stu-id: [BY2406100],
   abstract: abstract-en-text,
   abstract-en: abstract-zh-text,
-  bibliography: bibliography.with("ref.bib"),
+  bibliography: read("ref.bib"),
   achievement: [
     在国际会议上发表了多篇论文，
     参与了多个开源项目的开发，
@@ -162,6 +162,6 @@ $ E = m c^2 $ <mc2>
 
 == 文献引用
 
-让我们引用两个文献吧 @heDeepResidualLearning2016 @vaswaniAttentionAllYou2023！
+让我们引用两个文献吧 #multicite[@heDeepResidualLearning2016 @vaswaniAttentionAllYou2023]！
 
 #pagebreak()
