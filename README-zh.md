@@ -50,6 +50,15 @@
 
 ## 更新日志
 
+
+### [0.3.0 (💥 BreakChange)](https://github.com/wangjq4214/buaa-thesis/tree/0.3.0) (2026-04-11)
+
+#### 🐛 错误修复
+
+- 修复数学字体展示问题，默认使用 Cambria Math 字体
+- 修复参考文献格式问题，感谢 [gb7714-bilingual](https://github.com/pku-typst/gb7714-bilingual)
+- 修复参考文献的字符间距问题，使用更加紧凑的英文排版
+
 ### [0.2.0 (💥 BreakChange)](https://github.com/wangjq4214/buaa-thesis/tree/0.2.0) (2025-12-29)
 
 #### ✨ 新特性

@@ -50,6 +50,14 @@ This package only provides one main API for writing your own graduate thesis, gr
 
 ## Changelog
 
+### [0.3.0 (💥 BreakChange)](https://github.com/wangjq4214/buaa-thesis/tree/0.3.0) (2026-04-11)
+
+#### 🐛 Bug Fixes
+
+- fix math font rendering issue, using Cambria Math by default
+- fix bibliography formatting issue, thanks to [gb7714-bilingual](https://github.com/pku-typst/gb7714-bilingual)
+- fix bibliography character spacing issue with more compact English typesetting
+
 ### [0.2.0 (💥 BreakChange)](https://github.com/wangjq4214/buaa-thesis/tree/0.2.0) (2025-12-29)
 
 #### ✨ Features
