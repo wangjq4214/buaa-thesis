@@ -12,7 +12,7 @@
 }
 
 #let show-header(it) = {
-  set text(size: font-size.five, font: font-type.sun, lang: "zh")
+  set text(size: font-size.small-five, font: font-type.sun, lang: "zh")
   set align(center)
   set par(leading: 1em, spacing: 1em)
 
