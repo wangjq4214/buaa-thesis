@@ -53,7 +53,7 @@
 
 #let main-header(type: "master") = context {
   let dt = degree-text(type)
-  let page-number = here().page()
+  let page-number = counter(page).get().at(0)
 
   if calc.odd(page-number) {
     return [
