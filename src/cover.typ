@@ -26,7 +26,7 @@
     let max-width = measure([中图分类号]).width
     text(weight: "bold", distr("论文编号", max-width))
     [
-      *：100006#stu-id*
+      *：10006#stu-id*
     ]
   }
   v(2.5pt)
