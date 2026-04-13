@@ -13,7 +13,7 @@
     return (
       zh: "专业硕士",
       zh-student: "专业硕士研究生",
-      zh-thesis: "专业硕士学位论文",
+      zh-thesis: "硕士学位论文",
       zh-achievement: "攻读硕士学位期间取得的成果",
       en: "Professional Master",
     )
