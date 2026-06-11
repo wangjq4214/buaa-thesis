@@ -165,7 +165,7 @@
     #disable-heading-number()
 
     #if conclusion != [] {
-      [= 总结与展望]
+      [= 总结与展望 <chap:conclusion>]
 
       conclusion
       pagebreak()
