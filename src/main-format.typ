@@ -163,7 +163,11 @@
     let el = it.element
     if el != none and el.func() == heading {
       let num = numbering(el.numbering, ..counter(heading).at(el.location()))
-      link(el.location(), [#el.supplement #num])
+      if el.level == 1 {
+        link(el.location(), [#num])
+      } else {
+        link(el.location(), [#el.supplement #num])
+      }
     } else {
       it
     }
