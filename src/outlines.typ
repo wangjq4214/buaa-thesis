@@ -48,9 +48,9 @@
 
       link(it.element.location(), [
         #it.indented(
-          it.prefix(),
+          if has-number { it.prefix() } else { [] },
           [#it.body() #box(width: 1fr, repeat([.], gap: 0.1em)) #text(size: font-size.small-four, [#it.page()])],
-          gap: 0.2em,
+          gap: if has-number { 0.2em } else { 0em },
         )
       ])
     }
@@ -65,9 +65,9 @@
 
       link(it.element.location(), [
         #it.indented(
-          it.prefix(),
+          if has-number { it.prefix() } else { [] },
           [#it.body() #box(width: 1fr, repeat([.], gap: 0.1em)) #text(size: font-size.small-four, [#it.page()])],
-          gap: 0.2em,
+          gap: if has-number { 0.2em } else { 0em },
         )
       ])
     }
