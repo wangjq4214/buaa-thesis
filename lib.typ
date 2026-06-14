@@ -1,13 +1,14 @@
-#import "@preview/gb7714-bilingual:0.2.3": gb7714-bibliography, init-gb7714, multicite
+#import "@preview/gb7714-bilingual:0.2.3": init-gb7714, multicite
 #import "src/constant.typ": font-size, font-type, thesis-type
 #import "src/cover.typ": cover
 #import "src/abstract.typ": abstract, abstract-en
 #import "src/outlines.typ": heading-outline, image-outline, table-outline
 #import "src/header-footer.typ": append-header, leading-footer, main-footer, main-header
 #import "src/main-format.typ": show-main, sub-fig
-// #import "src/bib.typ": bib
-#import "src/utils.typ": degree-text, disable-heading-number, heading-numbering, reset-page
+#import "src/utils.typ": disable-heading-number, heading-numbering, reset-page
 #import "src/algorithm.typ": *
+#import "src/achievement.typ": achievement-papers, achievement-patents, achievement-projects, blind-review-state
+#import "src/appendix.typ": append-render
 
 #let abstract-render(abstract: [], abstract-en: []) = {
   if abstract != [] {
@@ -37,52 +38,6 @@
       table-outline()
       pagebreak()
     }
-  }
-}
-
-#let append-render(
-  type: "master",
-  bibliography: none,
-  achievement: [],
-  acknowledgements: [],
-  cv: [],
-) = {
-  let dt = degree-text(type)
-
-  if bibliography != none {
-    [= 参考文献]
-    set text(size: font-size.five, font: font-type.sun)
-    set par(leading: 1em, spacing: 1em, justification-limits: (
-      tracking: (min: -0.01em, max: 0.02em),
-    ))
-    gb7714-bibliography(title: none)
-
-    if achievement != [] or acknowledgements != [] or cv != [] {
-      pagebreak()
-    }
-  }
-
-  if achievement != [] {
-    [= #dt.zh-achievement]
-    achievement
-
-    if acknowledgements != [] or cv != [] {
-      pagebreak()
-    }
-  }
-
-  if acknowledgements != [] {
-    [= 致谢]
-    acknowledgements
-
-    if cv != [] {
-      pagebreak()
-    }
-  }
-
-  if cv != [] {
-    [= 作者简介]
-    cv
   }
 }
 
@@ -116,11 +71,14 @@
   acknowledgements: [],
   cv: [],
   is-print: false,
+  blind-review: false,
   body,
 ) = {
   if type not in thesis-type.values() {
     panic("Invalid thesis type: " + type)
   }
+
+  blind-review-state.update(blind-review)
 
   set text(size: font-size.small-four, font: font-type.sun, lang: "zh")
   set par(leading: 1.25em, spacing: 1.25em, justify: true)
@@ -138,6 +96,7 @@
     lib-number: lib-number,
     stu-id: stu-id,
     is-print: is-print,
+    blind-review: blind-review,
   )
 
   reset-page()
@@ -179,6 +138,7 @@
       achievement: achievement,
       acknowledgements: acknowledgements,
       cv: cv,
+      blind-review: blind-review,
     )
   ]
 }

@@ -12,7 +12,17 @@
   }
 }
 
-#let chinese-cover-leading(lib-number: "", stu-id: "") = {
+#let blind-block(width: 6em, height: 0.9em) = box(width: width, height: height, fill: black)
+
+#let maybe-blind(value, width: 6em, height: 0.9em, blind-review: false) = {
+  if blind-review {
+    blind-block(width: width, height: height)
+  } else {
+    value
+  }
+}
+
+#let chinese-cover-leading(lib-number: "", stu-id: "", blind-review: false) = {
   set text(size: font-size.five, font: font-type.hei, lang: "zh")
   set par(spacing: 1em, leading: 1.5em)
   show: show-cn-fakebold
@@ -26,7 +36,7 @@
     let max-width = measure([中图分类号]).width
     text(weight: "bold", distr("论文编号", max-width))
     [
-      *：10006#stu-id*
+      *：10006#maybe-blind(stu-id, width: 5em, height: 0.75em, blind-review: blind-review)*
     ]
   }
   v(2.5pt)
@@ -57,7 +67,7 @@
   v(96pt)
 }
 
-#let chinese-cover-info(author: "", major: "", teacher: "", college: "") = {
+#let chinese-cover-info(author: "", major: "", teacher: "", college: "", blind-review: false) = {
   set text(size: font-size.four, font: font-type.hei, lang: "zh")
   set par(spacing: 1.25em, leading: 1.25em, first-line-indent: (amount: 8em, all: true))
 
@@ -70,7 +80,7 @@
   [
     作者姓名
     #h(2em)
-    #author
+    #maybe-blind(author, width: 5em, blind-review: blind-review)
 
     学科专业
     #h(2em)
@@ -78,7 +88,7 @@
 
     指导教师
     #h(2em)
-    #teacher
+    #maybe-blind(teacher, width: 8em, blind-review: blind-review)
 
     培养学院
     #h(2em)
@@ -95,13 +105,18 @@
   college: [],
   lib-number: [],
   stu-id: [],
+  blind-review: false,
 ) = {
   // set library number and thesis number
-  chinese-cover-leading(lib-number: lib-number, stu-id: stu-id)
+  chinese-cover-leading(lib-number: lib-number, stu-id: stu-id, blind-review: blind-review)
 
   // computing the leading height, and set the vertical space
   context {
-    let height = measure(chinese-cover-leading(lib-number: lib-number, stu-id: stu-id)).height
+    let height = measure(chinese-cover-leading(
+      lib-number: lib-number,
+      stu-id: stu-id,
+      blind-review: blind-review,
+    )).height
 
     v(3.5cm - height)
   }
@@ -115,6 +130,7 @@
     major: major,
     teacher: teacher,
     college: college,
+    blind-review: blind-review,
   )
 }
 
@@ -133,17 +149,17 @@
   v(114pt)
 }
 
-#let english-cover-info(author: [], teacher: []) = {
+#let english-cover-info(author: [], teacher: [], blind-review: false) = {
   set text(size: font-size.small-three, font: font-type.hei, weight: "bold", lang: "en")
   set par(spacing: 1em, leading: 1em, first-line-indent: (amount: 4cm, all: true))
   set align(alignment.left)
 
   [
-    Candidate: #author
+    Candidate: #maybe-blind(author, width: 7em, blind-review: blind-review)
 
     \
 
-    Supervisor: #teacher
+    Supervisor: #maybe-blind(teacher, width: 9em, blind-review: blind-review)
   ]
 
   v(180pt)
@@ -161,14 +177,14 @@
   ]
 }
 
-#let english-cover(title: [], degree: [], author: [], teacher: [], college: []) = {
+#let english-cover(title: [], degree: [], author: [], teacher: [], college: [], blind-review: false) = {
   set page(margin: (top: 6cm, x: 2.5cm, bottom: 3cm))
   set align(alignment.center)
 
   english-cover-title(title: title, degree: degree)
 
   // set author and teacher
-  english-cover-info(author: author, teacher: teacher)
+  english-cover-info(author: author, teacher: teacher, blind-review: blind-review)
 
   // set college
   english-cover-college(college: college)
@@ -206,6 +222,7 @@
     summit: [],
     defense: [],
   ),
+  blind-review: false,
 ) = {
   set text(size: font-size.small-four, font: font-type.sun, lang: "zh")
   set par(justify: true)
@@ -213,8 +230,8 @@
   grid(
     columns: (0.8fr, 1fr, 0.8fr, 1fr),
     rows: 2.5em,
-    [作者姓名], author, [申请学位级别], degree,
-    [指导教师姓名], teacher, [#distr("职称", 4em)], teacher-degree,
+    [作者姓名], maybe-blind(author, width: 5em, blind-review: blind-review), [申请学位级别], degree,
+    [指导教师姓名], maybe-blind(teacher, width: 5em, blind-review: blind-review), [#distr("职称", 4em)], teacher-degree,
     [学科专业], major.discipline, [研究方向], major.direction,
     [一级学科], major.discipline-first, [学科方向], major.discipline-direction,
     [学习时间自], date.start, [至], date.end,
@@ -244,9 +261,10 @@
   ),
   lib-number: [],
   stu-id: [],
+  blind-review: false,
 ) = {
   // set library number and thesis number
-  chinese-cover-leading(lib-number: lib-number, stu-id: stu-id)
+  chinese-cover-leading(lib-number: lib-number, stu-id: stu-id, blind-review: blind-review)
 
   v(100pt)
 
@@ -261,10 +279,23 @@
     teacher-degree: teacher-degree,
     major: major,
     date: date,
+    blind-review: blind-review,
   )
 }
 
-#let statement-cover() = {
+#let statement-signature-line(
+  width: 11em,
+  line: "                               ",
+  blind-review: false,
+) = {
+  if blind-review {
+    blind-block(width: width, height: 0.8em)
+  } else {
+    underline(line)
+  }
+}
+
+#let statement-cover(blind-review: false) = {
   set text(size: font-size.small-four, font: font-type.sun, lang: "zh")
   set par(spacing: 1.25em, leading: 1.25em, first-line-indent: (amount: 2em, all: true), justify: true)
 
@@ -297,7 +328,7 @@
 
   [
     #set text(size: font-size.five)
-    学位论文作者签名：#underline("                               ")#h(5em)日期：#h(2.3em)年#h(1.45em)月#h(1.48em)日
+    学位论文作者签名：#statement-signature-line(blind-review: blind-review)#h(5em)日期：#h(2.3em)年#h(1.45em)月#h(1.48em)日
   ]
 
   v(100pt)
@@ -323,9 +354,9 @@
 
   [
     #set text(size: font-size.five)
-    学位论文作者签名：#underline("                               ")#h(5em)日期： #h(2.3em)年#h(1.45em)月#h(1.48em)日
+    学位论文作者签名：#statement-signature-line(blind-review: blind-review)#h(5em)日期： #h(2.3em)年#h(1.45em)月#h(1.48em)日
 
-    指导教师签名：#underline("                                       ")#h(5em)日期： #h(2.3em)年#h(1.45em)月#h(1.48em)日
+    指导教师签名：#statement-signature-line(width: 13em, line: "                                       ", blind-review: blind-review)#h(5em)日期： #h(2.3em)年#h(1.45em)月#h(1.48em)日
   ]
 }
 
@@ -352,6 +383,7 @@
   lib-number: [],
   stu-id: [],
   is-print: false,
+  blind-review: false,
 ) = {
   chinese-cover(
     type: type,
@@ -362,6 +394,7 @@
     college: college.zh,
     lib-number: lib-number,
     stu-id: stu-id,
+    blind-review: blind-review,
   )
 
   page-break-with-print(is-print: is-print)
@@ -372,6 +405,7 @@
     author: author.en,
     teacher: teacher-degree.en + " " + teacher.en,
     college: college.en,
+    blind-review: blind-review,
   )
 
   page-break-with-print(is-print: is-print)
@@ -387,10 +421,11 @@
     date: date,
     lib-number: lib-number,
     stu-id: stu-id,
+    blind-review: blind-review,
   )
   page-break-with-print(is-print: is-print)
 
-  statement-cover()
+  statement-cover(blind-review: blind-review)
 
   page-break-with-print(is-print: is-print)
 }
