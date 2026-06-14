@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <a href="https://www.buaa.edu.cn" rel="noopener noreferrer">
     <img width="180" src="assets/logo.png" alt="buaa logo" />
   </a>
@@ -21,7 +21,7 @@ A modern **[Typst](https://typst.app)** template for Beihang University graduate
 Install the package from Typst Universe and wrap your thesis body with `thesis.with(...)`:
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.3.0": abstract, abstract-en, thesis
+#import "@preview/modern-buaa-thesis:0.4.0": abstract, abstract-en, thesis
 
 #let abstract-zh = [
   #show: abstract.with(keyword: ("Typst", "BUAA", "Thesis"))
@@ -67,10 +67,10 @@ Install the package from Typst Universe and wrap your thesis body with `thesis.w
 = Experiments
 ```
 
-See [template/thesis.typ](./template/thesis.typ) for a complete source example and [example/thesis.pdf](./example/thesis.pdf) for the rendered PDF.
+See [template/thesis.typ](https://github.com/wangjq4214/buaa-thesis/blob/0.4.0/template/thesis.typ) for a complete source example and [example/thesis.pdf](https://github.com/wangjq4214/buaa-thesis/blob/0.4.0/example/thesis.pdf) for the rendered PDF.
 
 <p align="center">
-  <a href="./example/thesis.pdf" rel="noopener noreferrer">
+  <a href="https://github.com/wangjq4214/buaa-thesis/blob/0.4.0/example/thesis.pdf" rel="noopener noreferrer">
     <img width="600" src="thumbnail.png" alt="thesis preview" />
   </a>
 </p>
@@ -100,7 +100,7 @@ The supported thesis types are:
 The template exports `pseudocode-list`, a list-friendly pseudocode builder inspired by [lovelace](https://typst.app/universe/package/lovelace). It works inside a Typst `figure` with `kind: "algorithm"`, so algorithms are numbered and referenced consistently with the thesis format.
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.3.0": font-type, pseudocode-list
+#import "@preview/modern-buaa-thesis:0.4.0": font-type, pseudocode-list
 
 #figure(
   kind: "algorithm",
@@ -168,7 +168,7 @@ Print mode inserts additional page breaks between the generated cover pages, mak
 The template integrates [gb7714-bilingual](https://typst.app/universe/package/gb7714-bilingual) and exports `multicite` for grouped citations:
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.3.0": multicite, thesis
+#import "@preview/modern-buaa-thesis:0.4.0": multicite, thesis
 
 #show: thesis.with(
   bibliography: read("ref.bib"),
@@ -184,7 +184,7 @@ When `bibliography` is provided, the template initializes the GB/T 7714 numeric 
 Besides free-form `achievement`, `acknowledgements`, and `cv` content, the package provides helpers for structured achievement lists:
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.3.0": achievement-papers, achievement-patents, thesis
+#import "@preview/modern-buaa-thesis:0.4.0": achievement-papers, achievement-patents, thesis
 
 #let papers = achievement-papers((
   (
@@ -229,7 +229,7 @@ The main body format customizes common academic elements:
 Use `sub-fig` when a figure contains multiple panels:
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.3.0": sub-fig
+#import "@preview/modern-buaa-thesis:0.4.0": sub-fig
 
 #sub-fig(
   figure(
@@ -287,6 +287,25 @@ The main entry point is `thesis.with(...)`.
 - [ ] Implement support for proposal reports and interim reports (maybe a new package?)
 
 ## 📝 Changelog
+
+### [0.4.0](https://github.com/wangjq4214/buaa-thesis/tree/0.4.0) (2026-06-14)
+
+#### ✨ Features
+
+- add blind review mode through `blind-review: true`
+- add structured achievement helpers for papers, patents, and research projects
+- add a `chap:conclusion` label for referencing the conclusion section
+
+#### 🐛 Bug Fixes
+
+- fix header font size and page number display
+- fix the thesis number prefix on the cover
+- fix professional master's thesis title wording
+- fix heading references and outline entries
+
+#### 📝 Documentation
+
+- refresh README examples and feature descriptions
 
 ### [0.3.0 (BreakChange)](https://github.com/wangjq4214/buaa-thesis/tree/0.3.0) (2026-04-11)
 

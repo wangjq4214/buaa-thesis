@@ -29,7 +29,6 @@
     justify: true,
   )
 
-
   body
 
   [
@@ -42,7 +41,7 @@
 #let abstract-en(keyword: (), body) = {
   [
     #set align(center)
-    #set text(size: font-size.three, font: font-type.hei, lang: "zh")
+    #set text(size: font-size.three, font: font-type.hei, lang: "en")
     #set par(leading: 1em, spacing: 1em)
 
     #v(0.5em)
@@ -52,7 +51,7 @@
 
   [
     #set align(center)
-    #set text(size: font-size.five, font: font-type.hei, lang: "zh")
+    #set text(size: font-size.five, font: font-type.hei, lang: "en")
 
     #v(2.5pt)
     \
@@ -72,7 +71,7 @@
   body
 
   [
-    #set text(size: font-size.small-four, font: font-type.hei, lang: "zh")
+    #set text(size: font-size.small-four, font: font-type.hei, lang: "en")
 
     *Keywords*: #keyword.join(", ")
   ]

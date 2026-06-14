@@ -1,4 +1,4 @@
-﻿#import "@preview/modern-buaa-thesis:0.3.0": abstract, abstract-en, font-type, multicite, pseudocode-list, thesis
+﻿#import "@preview/modern-buaa-thesis:0.4.0": abstract, abstract-en, font-type, multicite, pseudocode-list, thesis
 
 #let abstract-zh-text = [
   #show: abstract.with(keyword: ("关键词 1", "关键词 2"))
@@ -34,8 +34,8 @@
   degree: (zh: "工学博士", en: "Doctor of Philosophy"),
   lib-number: [TP317],
   stu-id: [BY2406100],
-  abstract: abstract-en-text,
-  abstract-en: abstract-zh-text,
+  abstract: abstract-zh-text,
+  abstract-en: abstract-en-text,
   bibliography: read("ref.bib"),
   achievement: [
     在国际会议上发表了多篇论文，
