@@ -74,7 +74,7 @@
         achievement-names(achievement-value(
           item,
           "members",
-          default: achievement-value(item, "participants", default: ()),
+          default: achievement-value(item, "members", default: ()),
         )),
         prefix: [参与人：],
         suffix: [. ],
