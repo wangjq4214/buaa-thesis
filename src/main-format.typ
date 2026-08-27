@@ -35,9 +35,9 @@
 
       v(0.5em)
       if has-number {
-        numbering(it.numbering, ..counter(heading).at(it.location())) + "  " + it.body
+        block(numbering(it.numbering, ..counter(heading).at(it.location())) + "  " + it.body, sticky: true)
       } else {
-        it.body
+        block(it.body, sticky: true)
       }
       v(0.5em)
     }
@@ -52,9 +52,9 @@
 
       v(0.5em)
       if has-number {
-        numbering(it.numbering, ..counter(heading).at(it.location())) + "  " + it.body
+        block(numbering(it.numbering, ..counter(heading).at(it.location())) + "  " + it.body, sticky: true)
       } else {
-        it.body
+        block(it.body, sticky: true)
       }
       v(0.5em)
     }
@@ -69,9 +69,9 @@
 
       v(0.5em)
       if has-number {
-        numbering(it.numbering, ..counter(heading).at(it.location())) + "  " + it.body
+        block(numbering(it.numbering, ..counter(heading).at(it.location())) + "  " + it.body, sticky: true)
       } else {
-        it.body
+        block(it.body, sticky: true)
       }
       v(0.5em)
     }
