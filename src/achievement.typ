@@ -70,15 +70,6 @@
     numbering: "[1]",
     ..items.map(item => [
       #achievement-part(achievement-value(item, "title"), suffix: [. ])
-      #achievement-part(
-        achievement-names(achievement-value(
-          item,
-          "members",
-          default: achievement-value(item, "members", default: ()),
-        )),
-        prefix: [参与人：],
-        suffix: [. ],
-      )
       #achievement-part(achievement-value(item, "year"), suffix: [. ])
       #achievement-part(achievement-value(item, "note"))
     ]),
