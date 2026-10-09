@@ -144,11 +144,15 @@ Set `blind-review: true` when generating a review copy:
 )
 ```
 
-Blind review mode masks sensitive identity fields in the generated PDF:
+Blind review mode leaves sensitive identity fields blank rather than drawing redaction blocks:
 
-- Student ID, author name, supervisor name, and signature fields on cover/declaration pages
-- Author/member names in structured achievement lists
+- Complete thesis number, student ID, author, supervisor, supervisor title, and signatures on cover/title/declaration pages
+- All names in structured paper and patent achievements, replaced by the applicant's author position; patent numbers are omitted
 - Acknowledgements and CV sections are omitted from the appendix
+
+The applicant's position is matched against the Chinese/English `author` values in `thesis` and the achievement's `authors` list. A positive integer `author-rank` on an item can override this position. Blind review compilation fails if no position can be determined. Co-first/corresponding-author descriptions remain in `note` and do not replace the listed position.
+
+Bibliography entries remain unchanged. Manually typeset achievements, names or accession/certificate numbers embedded in `note`, and identity information in images require a manual submission check.
 
 ### 🖨️ Print Mode
 

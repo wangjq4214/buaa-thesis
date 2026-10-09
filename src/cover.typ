@@ -12,7 +12,7 @@
   }
 }
 
-#let blind-block(width: 6em, height: 0.9em) = box(width: width, height: height, fill: black)
+#let blind-block(width: 6em, height: 0.9em) = box(width: width, height: height)
 
 #let maybe-blind(value, width: 6em, height: 0.9em, blind-review: false) = {
   if blind-review {
@@ -36,7 +36,7 @@
     let max-width = measure([中图分类号]).width
     text(weight: "bold", distr("论文编号", max-width))
     [
-      *：10006#maybe-blind(stu-id, width: 5em, height: 0.75em, blind-review: blind-review)*
+      *：#maybe-blind([10006#stu-id], width: 10em, height: 0.75em, blind-review: blind-review)*
     ]
   }
   v(2.5pt)
@@ -231,7 +231,11 @@
     columns: (0.8fr, 1fr, 0.8fr, 1fr),
     rows: 2.5em,
     [作者姓名], maybe-blind(author, width: 5em, blind-review: blind-review), [申请学位级别], degree,
-    [指导教师姓名], maybe-blind(teacher, width: 5em, blind-review: blind-review), [#distr("职称", 4em)], teacher-degree,
+    [指导教师姓名],
+    maybe-blind(teacher, width: 5em, blind-review: blind-review),
+    [#distr("职称", 4em)],
+    maybe-blind(teacher-degree, width: 3em, blind-review: blind-review),
+
     [学科专业], major.discipline, [研究方向], major.direction,
     [一级学科], major.discipline-first, [学科方向], major.discipline-direction,
     [学习时间自], date.start, [至], date.end,

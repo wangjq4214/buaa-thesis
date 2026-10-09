@@ -7,7 +7,9 @@
 #import "src/main-format.typ": show-main, sub-fig
 #import "src/utils.typ": disable-heading-number, heading-numbering, reset-page
 #import "src/algorithm.typ": *
-#import "src/achievement.typ": achievement-papers, achievement-patents, achievement-projects, blind-review-state
+#import "src/achievement.typ": (
+  achievement-author-state, achievement-papers, achievement-patents, achievement-projects, blind-review-state,
+)
 #import "src/appendix.typ": append-render
 
 #let abstract-render(abstract: [], abstract-en: []) = {
@@ -79,6 +81,7 @@
   }
 
   blind-review-state.update(blind-review)
+  achievement-author-state.update(author.values())
 
   set text(size: font-size.small-four, font: font-type.sun, lang: "zh")
   set par(leading: 1.25em, spacing: 1.25em, justify: true)
