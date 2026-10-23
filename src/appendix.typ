@@ -4,11 +4,29 @@
 
 #let append-bibliography-render(has-next: false) = {
   [= 参考文献]
-  set text(size: font-size.five, font: font-type.sun)
-  set par(leading: 1em, spacing: 1em, justification-limits: (
-    tracking: (min: -0.01em, max: 0.02em),
-  ))
-  gb7714-bibliography(title: none)
+
+  set text(
+    size: font-size.five,
+    font: font-type.sun,
+    top-edge: 0.8em,
+    bottom-edge: 0.8em - 16pt,
+  )
+  set par(
+    leading: 0pt,
+    spacing: 0pt,
+    first-line-indent: 0pt,
+    justification-limits: (tracking: (min: -0.01em, max: 0.02em)),
+  )
+
+  gb7714-bibliography(title: none, full-control: entries => {
+    for e in entries {
+      block(
+        above: 3pt,
+        below: 0pt,
+        par(hanging-indent: 2em)[[#e.order]#h(0.5em)#e.labeled-rendered],
+      )
+    }
+  })
 
   if has-next {
     pagebreak()
