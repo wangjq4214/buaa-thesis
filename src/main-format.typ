@@ -166,7 +166,7 @@
       if el.level == 1 {
         link(el.location(), [#num])
       } else {
-        link(el.location(), [#el.supplement #num])
+        link(el.location(), [第#num#el.supplement])
       }
     } else {
       it
