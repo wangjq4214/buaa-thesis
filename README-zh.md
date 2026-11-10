@@ -21,7 +21,7 @@
 从 Typst Universe 引入模板，然后用 `thesis.with(...)` 包裹正文：
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.4.0": abstract, abstract-en, thesis
+#import "@preview/modern-buaa-thesis:0.4.1": abstract, abstract-en, thesis
 
 #let abstract-zh = [
   #show: abstract.with(keyword: ("Typst", "北航", "毕业论文"))
@@ -67,10 +67,10 @@
 = 实验
 ```
 
-完整示例可以查看 [template/thesis.typ](https://github.com/wangjq4214/buaa-thesis/blob/0.4.0/template/thesis.typ)，渲染效果可以查看 [example/thesis.pdf](https://github.com/wangjq4214/buaa-thesis/blob/0.4.0/example/thesis.pdf)。
+完整示例可以查看 [template/thesis.typ](https://github.com/wangjq4214/buaa-thesis/blob/0.4.1/template/thesis.typ)，渲染效果可以查看 [example/thesis.pdf](https://github.com/wangjq4214/buaa-thesis/blob/0.4.1/example/thesis.pdf)。
 
 <p align="center">
-  <a href="https://github.com/wangjq4214/buaa-thesis/blob/0.4.0/example/thesis.pdf" rel="noopener noreferrer">
+  <a href="https://github.com/wangjq4214/buaa-thesis/blob/0.4.1/example/thesis.pdf" rel="noopener noreferrer">
     <img width="600" src="thumbnail.png" alt="thesis preview" />
   </a>
 </p>
@@ -100,7 +100,7 @@
 模板导出 `pseudocode-list`，这是一个适合论文写作的伪代码工具，灵感来自 [lovelace](https://typst.app/universe/package/lovelace)。它可以放在 `kind: "algorithm"` 的 `figure` 中，因此算法会和正文中的图表一样获得统一编号和引用格式。
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.4.0": font-type, pseudocode-list
+#import "@preview/modern-buaa-thesis:0.4.1": font-type, pseudocode-list
 
 #figure(
   kind: "algorithm",
@@ -172,7 +172,7 @@
 模板集成 [gb7714-bilingual](https://typst.app/universe/package/gb7714-bilingual)，并导出 `multicite` 用于组合引用：
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.4.0": multicite, thesis
+#import "@preview/modern-buaa-thesis:0.4.1": multicite, thesis
 
 #show: thesis.with(
   bibliography: read("ref.bib"),
@@ -188,7 +188,7 @@
 除了直接传入自由排版的 `achievement`、`acknowledgements` 和 `cv` 内容，模板还提供结构化成果列表工具：
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.4.0": achievement-papers, achievement-patents, thesis
+#import "@preview/modern-buaa-thesis:0.4.1": achievement-papers, achievement-patents, thesis
 
 #let papers = achievement-papers((
   (
@@ -233,7 +233,7 @@
 当一个图中包含多个子图时，可以使用 `sub-fig`：
 
 ```typ
-#import "@preview/modern-buaa-thesis:0.4.0": sub-fig
+#import "@preview/modern-buaa-thesis:0.4.1": sub-fig
 
 #sub-fig(
   figure(
@@ -291,6 +291,25 @@
 - [ ] 实现开题报告、中期报告的支持（或许是新的包？）
 
 ## 📝 更新日志
+
+### [0.4.1](https://github.com/wangjq4214/buaa-thesis/tree/0.4.1) (2026-11-10)
+
+#### ✨ 新特性
+
+- 盲审模式下将敏感身份字段留空，不再绘制黑色遮挡块
+- 盲审论文和专利成果显示申请者排序，支持通过 `author-rank` 覆盖排序并校验
+- 盲审模式下隐藏专利号，科研项目成果不再显示参与人字段
+
+#### 🐛 错误修复
+
+- 避免章节标题与后续正文分页分离
+- 修正章节引用的表述
+- 改进参考文献的悬挂缩进、行距和条目间距
+
+#### 📝 文档
+
+- 更新示例三线表的推荐线宽
+- 补充盲审成果排序规则及身份信息人工检查说明
 
 ### [0.4.0](https://github.com/wangjq4214/buaa-thesis/tree/0.4.0) (2026-06-14)
 
